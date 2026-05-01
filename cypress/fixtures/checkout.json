@@ -1,0 +1,22 @@
+{
+  "validCustomer": {
+    "firstName": "Rotua",
+    "lastName": "Tampubolon",
+    "postalCode": "20211"
+  },
+  "missingFirstName": {
+    "firstName": "",
+    "lastName": "Tampubolon",
+    "postalCode": "20211"
+  },
+  "missingLastName": {
+    "firstName": "Rotua",
+    "lastName": "",
+    "postalCode": "20211"
+  },
+  "missingPostalCode": {
+    "firstName": "Rotua",
+    "lastName": "Tampubolon",
+    "postalCode": ""
+  }
+}
