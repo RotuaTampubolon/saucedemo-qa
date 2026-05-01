@@ -1,14 +1,13 @@
 // ============================================================
 // TEST SUITE: Login Feature
-// App: SauceDemo (https://www.saucedemo.com)
+// App: SauceDemo
 // Author: Rotua Immanuela Tampubolon
 // ============================================================
 
 describe('Login Feature', () => {
 
-  // Runs before each test — open the login page
   beforeEach(() => {
-    cy.visit('https://www.saucedemo.com')
+    cy.visit('/')
   })
 
   // POSITIVE CASES
@@ -17,9 +16,11 @@ describe('Login Feature', () => {
     cy.get('#password').type('secret_sauce')
     cy.get('#login-button').click()
 
-    // Should land on inventory page
     cy.url().should('include', '/inventory')
     cy.get('.title').should('have.text', 'Products')
+
+    // Ambil screenshot bukti halaman Products terbuka
+    cy.screenshot('TC-001-login-valid-success')
   })
 
   // NEGATIVE CASES
@@ -27,10 +28,12 @@ describe('Login Feature', () => {
     cy.get('#user-name').type('locked_out_user')
     cy.get('#password').type('secret_sauce')
     cy.get('#login-button').click()
-    
+
     cy.get('[data-test="error"]')
       .should('be.visible')
       .and('contain', 'Sorry, this user has been locked out')
+
+    cy.screenshot('TC-002-login-locked-out-error')
   })
 
   it('TC-003 | Empty username should show validation error', () => {
@@ -39,6 +42,8 @@ describe('Login Feature', () => {
 
     cy.get('[data-test="error"]')
       .should('contain', 'Username is required')
+
+    cy.screenshot('TC-003-login-empty-username-error')
   })
 
   it('TC-004 | Empty password should show validation error', () => {
@@ -47,6 +52,8 @@ describe('Login Feature', () => {
 
     cy.get('[data-test="error"]')
       .should('contain', 'Password is required')
+
+    cy.screenshot('TC-004-login-empty-password-error')
   })
 
   it('TC-005 | Wrong password should show credentials error', () => {
@@ -56,6 +63,8 @@ describe('Login Feature', () => {
 
     cy.get('[data-test="error"]')
       .should('contain', 'Username and password do not match')
+
+    cy.screenshot('TC-005-login-wrong-credentials-error')
   })
 
 })
