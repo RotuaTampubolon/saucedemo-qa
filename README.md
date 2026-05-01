@@ -3,6 +3,7 @@
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![CI](https://github.com/RotuaTampubolon/saucedemo-qa/actions/workflows/cypress-tests.yml/badge.svg)
 
 > End-to-end QA Testing Portfolio — Manual & Automation  
 > **Tester:** Rotua Immanuela Tampubolon | Information Systems Student
